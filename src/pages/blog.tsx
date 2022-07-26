@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react';
 import { useState, useEffect } from 'react';
+import test from "./test.md"
+import ReactMarkdown from 'react-markdown' 
 
 interface Props {
     postTitle: string,
@@ -14,7 +16,7 @@ const Post: NextPage<Props> = ({ postTitle = "No Title", date = "", text = "" })
         <>
             <h1>{postTitle}</h1>
             <div>{date}</div>
-            <div>{text}</div>
+            <ReactMarkdown>{text}</ReactMarkdown>
         </>
     )
 }
@@ -28,7 +30,7 @@ const Blog: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <h1>Blog</h1>
-            <Post postTitle={'Lorem Ipsum'} date={'01.01.01'} text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."} />
+            <Post postTitle={'Lorem Ipsum'} date={'01.01.01'} text={test} />
         </>
     )
 }
