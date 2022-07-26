@@ -1,2 +1,1 @@
-Personal portfolio made with next, ts, react, taiwind
-(+wouter, three.js, ..., ?)
+Personal portfolio made with next, ts, react, taiwind (+three.js, ..., ?)
