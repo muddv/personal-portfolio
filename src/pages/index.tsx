@@ -15,6 +15,12 @@ const Home: NextPage = () => {
         <h1 className="flex justify-center font-extrabold text-2xl">
           Welcome to my page
         </h1>
+        <a
+          href="/file.pdf"
+          alt="download pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Download File</a>
       </div>
     </>
   )
