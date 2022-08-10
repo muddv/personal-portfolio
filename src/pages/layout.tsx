@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import sun from '../images/sun.svg'
@@ -15,10 +15,26 @@ const Layout: NextPage = () => {
     function showNavMenu() {
         setNavMenu(!navMenu);
     }
+    const [position, setPosition] = useState(global.scrollY)
+    const [visible, setVisible] = useState(true)
+    useEffect(() => {
+        const handleScroll = () => {
+            let moving = global.scrollY
+
+            setVisible(position > moving);
+            setPosition(moving)
+        };
+        global.addEventListener("scroll", handleScroll);
+        return (() => {
+            global.removeEventListener("scroll", handleScroll);
+        })
+    })
+    // FIX THIS and add transition
+    const cls = visible ? "visible p-2 flex justify-between bg-white text-body-blue text-xl font-bold fixed w-full z-20 top-0 left-0 border-b-2 border-gray-200 dark:bg-white dark:border-gray-600" : "hidden";
 
     return (
         <>
-            <header className="p-2 flex justify-between bg-white text-body-blue text-xl font-bold fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:bg-white dark:border-gray-600">
+            <header className={cls}>
                 <div><button onClick={showNavMenu} data-collapse-toggle="navbar-sticky" type="button"
                     className="inline-flex tems-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false"><Image src={menu} alt="navigation menu"></Image></button>
                 </div>
