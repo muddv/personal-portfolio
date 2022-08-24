@@ -2,8 +2,9 @@ import type { NextPage } from 'next'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import sun from '../images/sun.svg'
-import menu from '../images/menu.svg'
+import sun from '../assets/sun.svg'
+import moon from '../assets/moon.svg'
+import menu from '../assets/menu.svg'
 
 const Layout: NextPage = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -40,7 +41,7 @@ const Layout: NextPage = () => {
                 </div>
                 <div className="flex justify-center align-center">WOW OK</div>
                 <button className="p-2" onClick={swichColorMode}>
-                    <Image src={sun} alt="switch light and dark mode" />
+                    <Image src={darkMode ? moon : sun} alt="switch light and dark mode" />
                 </button>
             </header>
             <div className={navMenu ? "fixed justify-between items-center w-full md:flex md:w-auto md:order-1" : "hidden"}>
