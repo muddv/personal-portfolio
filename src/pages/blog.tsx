@@ -1,10 +1,12 @@
-import type { NextPage } from 'next'
+import type { NextPageWithLayout } from './_app'
+import type { NextPage } from 'next';
+import { ReactElement } from 'react'
 import Head from 'next/head'
 import React from 'react';
 import test from "./test.md"
 import ReactMarkdown from 'react-markdown'
-import Layout from './layout';
-import Footer from  './footer'
+import Layout from '../components/Layout'
+
 
 interface Props {
     postTitle: string,
@@ -22,7 +24,7 @@ const Post: NextPage<Props> = ({ postTitle = "No Title", date = "", text = "" })
     )
 }
 
-const Blog: NextPage = () => {
+const Blog: NextPageWithLayout = () => {
     return (
         <>
             <Head>
@@ -31,13 +33,19 @@ const Blog: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="h-full w-screen bg-orange-50 text-stone-800 dark:bg-body-blue dark:text-white">
-                <Layout></Layout>
                 <h1 className="pt-16">Blog</h1>
                 <Post postTitle={'Lorem Ipsum'} date={'01.01.01'} text={test} />
             </div>
-            <Footer></Footer>
         </>
     )
 }
+
+Blog.getLayout = function getLayout(page: ReactElement) {
+    return (
+      <Layout>
+        {page}
+      </Layout>
+    )
+  }
 
 export default Blog

@@ -1,12 +1,12 @@
-import type { NextPage } from 'next'
+import { ReactElement } from 'react'
 import Head from 'next/head'
-import Layout from './layout'
-import Footer from './footer'
+import type { NextPageWithLayout } from './_app'
 import Image from 'next/image'
 import ghProfilePic from '../../public/gh_profile_picture_round.png'
-import Carousel from './carousel'
+import Carousel from '../components/carousel'
+import Layout from '../components/Layout'
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -15,7 +15,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-full w-screen bg-orange-50 text-stone-800 dark:bg-body-blue dark:text-white">
-        <Layout></Layout>
         <div className="mx-2">
           <h1 className="text-body-blue dark:text-gray-100 pt-24 flex justify-center font-extrabold text-2xl">
             Welcome to my page
@@ -33,8 +32,15 @@ const Home: NextPage = () => {
           <div className='mt-4'>American actor Billy Porter wore a black velvet tuxedo dress designed by Christian Siriano on the red carpet of the 91st Academy Awards (Oscars) on February 24, 2019. Porter had recently come into public view for his breakout role in the FX television series Pose, and his boundary-pushing red carpet attire during the 2018–19 film awards season. Following his appearance at the 76th Golden Globe Awards in a custom silver suit with fuchsia-lined cape, he was invited to host red carpet interviews at the Oscars pre-show. Porter approached Siriano and together they conceived the tuxedo gown. It was well-received by fashion journalists, who highlighted its elegant design and described it as a favorite Oscars dress and one of Porter's most fashionable red carpet looks. The gown cemented Porter's status as a celebrity and as a fashion icon. Porter considers the outfit a piece of political art intended to drive a conversation about men's fashion and masculinity. It has also received praise from academics and the general public, as well as criticism from conservative commentators. American actor Billy Porter wore a black velvet tuxedo dress designed by Christian Siriano on the red carpet of the 91st Academy Awards (Oscars) on February 24, 2019. Porter had recently come into public view for his breakout role in the FX television series Pose, and his boundary-pushing red carpet attire during the 2018–19 film awards season. Following his appearance at the 76th Golden Globe Awards in a custom silver suit with fuchsia-lined cape, he was invited to host red carpet interviews at the Oscars pre-show. Porter approached Siriano and together they conceived the tuxedo gown. It was well-received by fashion journalists, who highlighted its elegant design and described it as a favorite Oscars dress and one of Porter's most fashionable red carpet looks. The gown cemented Porter's status as a celebrity and as a fashion icon. Porter considers the outfit a piece of political art intended to drive a conversation about men's fashion and masculinity. It has also received praise from academics and the general public, as well as criticism from conservative commentators. American actor Billy Porter wore a black velvet tuxedo dress designed by Christian Siriano on the red carpet of the 91st Academy Awards (Oscars) on February 24, 2019. Porter had recently come into public view for his breakout role in the FX television series Pose, and his boundary-pushing red carpet attire during the 2018–19 film awards season. Following his appearance at the 76th Golden Globe Awards in a custom silver suit with fuchsia-lined cape, he was invited to host red carpet interviews at the Oscars pre-show. Porter approached Siriano and together they conceived the tuxedo gown. It was well-received by fashion journalists, who highlighted its elegant design and described it as a favorite Oscars dress and one of Porter's most fashionable red carpet looks. The gown cemented Porter's status as a celebrity and as a fashion icon. Porter considers the outfit a piece of political art intended to drive a conversation about men's fashion and masculinity. It has also received praise from academics and the general public, as well as criticism from conservative commentators. American actor Billy Porter wore a black velvet tuxedo dress designed by Christian Siriano on the red carpet of the 91st Academy Awards (Oscars) on February 24, 2019. Porter had recently come into public view for his breakout role in the FX television series Pose, and his boundary-pushing red carpet attire during the 2018–19 film awards season. Following his appearance at the 76th Golden Globe Awards in a custom silver suit with fuchsia-lined cape, he was invited to host red carpet interviews at the Oscars pre-show. Porter approached Siriano and together they conceived the tuxedo gown. It was well-received by fashion journalists, who highlighted its elegant design and described it as a favorite Oscars dress and one of Porter's most fashionable red carpet looks. The gown cemented Porter's status as a celebrity and as a fashion icon. Porter considers the outfit a piece of political art intended to drive a conversation about men's fashion and masculinity. It has also received praise from academics and the general public, as well as criticism from conservative commentators. American actor Billy Porter wore a black velvet tuxedo dress designed by Christian Siriano on the red carpet of the 91st Academy Awards (Oscars) on February 24, 2019. Porter had recently come into public view for his breakout role in the FX television series Pose, and his boundary-pushing red carpet attire during the 2018–19 film awards season. Following his appearance at the 76th Golden Globe Awards in a custom silver suit with fuchsia-lined cape, he was invited to host red carpet interviews at the Oscars pre-show. Porter approached Siriano and together they conceived the tuxedo gown. It was well-received by fashion journalists, who highlighted its elegant design and described it as a favorite Oscars dress and one of Porter's most fashionable red carpet looks. The gown cemented Porter's status as a celebrity and as a fashion icon. Porter considers the outfit a piece of political art intended to drive a conversation about men's fashion and masculinity. It has also received praise from academics and the general public, as well as criticism from conservative commentators. American actor Billy Porter wore a black velvet tuxedo dress designed by Christian Siriano on the red carpet of the 91st Academy Awards (Oscars) on February 24, 2019. Porter had recently come into public view for his breakout role in the FX television series Pose, and his boundary-pushing red carpet attire during the 2018–19 film awards season. Following his appearance at the 76th Golden Globe Awards in a custom silver suit with fuchsia-lined cape, he was invited to host red carpet interviews at the Oscars pre-show. Porter approached Siriano and together they conceived the tuxedo gown. It was well-received by fashion journalists, who highlighted its elegant design and described it as a favorite Oscars dress and one of Porter's most fashionable red carpet looks. The gown cemented Porter's status as a celebrity and as a fashion icon. Porter considers the outfit a piece of political art intended to drive a conversation about men's fashion and masculinity. It has also received praise from academics and the general public, as well as criticism from conservative commentators. </div>
         </div>
       </div>
-      <Footer></Footer>
     </>
+  )
+}
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
   )
 }
 

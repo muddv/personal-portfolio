@@ -1,12 +1,13 @@
 import type { NextPage } from 'next'
 import { useState, useEffect } from 'react'
+import type { ReactElement } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import sun from '../assets/sun.svg'
 import moon from '../assets/moon.svg'
 import menu from '../assets/menu.svg'
 
-const Layout: NextPage = () => {
+const Header: NextPage = () => {
     const [darkMode, setDarkMode] = useState(false);
     function swichColorMode() {
         setDarkMode(!darkMode);
@@ -53,5 +54,25 @@ const Layout: NextPage = () => {
         </>
     )
 }
+
+const Footer: NextPage = () => {
+    return (
+        <>
+        <footer className="h-full">
+            <div className="flex align-bottom">GitHub Twitter etc.</div>
+        </footer>
+        </>
+    )
+}
+
+const Layout = (props: { children: ReactElement }) => {
+    return (
+        <>
+            <Header />
+            {props.children}
+            <Footer />
+        </>
+    );
+};
 
 export default Layout

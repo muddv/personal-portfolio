@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Image, { StaticImageData } from 'next/image'
 import { useState } from 'react'
-import { prependOnceListener } from 'process'
 import one from '../assets/1.png'
 import two from '../assets/2.png'
 import three from '../assets/3.png'
